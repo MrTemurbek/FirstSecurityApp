@@ -25,6 +25,16 @@ public class Person {
     @Size(min = 4, message ="размер должен находиться в диапазоне от 4")
     private String password;
 
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+    @Column(name = "role")
+    public void setRole(String role) {
+        this.role = role;
+    }
+
     public Person(String username, int yearOfBirth) {
         this.username = username;
         this.yearOfBirth = yearOfBirth;
@@ -72,6 +82,7 @@ public class Person {
                 ", username='" + username + '\'' +
                 ", yearOfBirth=" + yearOfBirth +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }
